@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="bg-[#f4f0e3] min-h-screen flex flex-col">
       <Navbar menuItems={menuItems} />
-      <div>
+      <div className="flex-grow">
         <AboutUs />
       </div>
       <Footer />

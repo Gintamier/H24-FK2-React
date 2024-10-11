@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="flex-grow flex flex-col justify-center items-center text-center py-16">
-        <HoverImage />
+        <HoverImage /> {/* Hover over for "Slogan" */}
         <h1 className="mt-4 text-4xl font-bold text-[#416d79]">
           Welcome to The Hungry Llama!
         </h1>

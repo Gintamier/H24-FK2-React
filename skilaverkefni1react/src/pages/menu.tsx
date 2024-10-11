@@ -15,32 +15,32 @@ function App() {
   const starters = [
     {
       image:
-        "https://www.jessicagavin.com/wp-content/uploads/2020/01/california-sushi-roll-7-500x500.jpg",
+        "https://www.pressurecookrecipes.com/wp-content/uploads/2021/02/california-roll.jpg",
       name: "California Sushi Roll",
       description:
         "Crab, avocado, and cucumber wrapped in seasoned rice and nori.",
     },
     {
       image:
-        "https://downshiftology.com/wp-content/uploads/2020/04/Guacamole-Recipe-500x500.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTojEaODGtJjTXkEbEEW8QjBuvUYg2AcsP45w&s",
       name: "Guacamole and Chips",
       description: "Fresh guacamole served with crispy tortilla chips.",
     },
     {
       image:
-        "https://cookieandkate.com/images/2018/09/best-red-lentil-soup-recipe-1-550x824.jpg",
+        "https://www.feastingathome.com/wp-content/uploads/2024/01/Red-lentil-Soup-Recipe-11.jpg",
       name: "Lentil Soup",
       description: "A warm, spiced red lentil soup with fresh herbs and lemon.",
     },
     {
       image:
-        "https://hips.hearstapps.com/del.h-cdn.co/assets/17/21/1495828576-shrimp-cocktail-delish.jpg",
+        "https://natashaskitchen.com/wp-content/uploads/2019/12/Shrimp-Cocktail-6.jpg",
       name: "Shrimp Cocktail",
       description: "Poached shrimp served with tangy cocktail sauce.",
     },
     {
       image:
-        "https://assets.epicurious.com/photos/5b74533c7cfe6255111472f7/master/pass/classic-deviled-eggs-recipe-BA-080818.jpg",
+        "https://static01.nyt.com/images/2021/10/15/dining/aw-classic-deviled-eggs/aw-classic-deviled-eggs-videoSmall.jpg",
       name: "Deviled Eggs",
       description: "Classic deviled eggs with a touch of paprika.",
     },
@@ -83,7 +83,7 @@ function App() {
     },
     {
       image:
-        "https://www.daringgourmet.com/wp-content/uploads/2022/06/Chicken-Parmesan-1-square.jpg",
+        "https://assets.bonappetit.com/photos/5ea8f0df16738800085ad5d2/1:1/w_2560%2Cc_limit/Chicken-Parmesean-Recipe-Lede.jpg",
       name: "Chicken Parmesan",
       description:
         "Breaded chicken breast topped with marinara and melted mozzarella.",
@@ -100,27 +100,27 @@ function App() {
     },
     {
       image:
-        "https://www.thespruceeats.com/thmb/sPvBOUJwATexzoJESnvk5X9iykU=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/classic-chicken-salad-sandwich-3052218-hero-01-7b3206b426ac466185e7ffbe7414c667.jpg",
+        "https://www.thespruceeats.com/thmb/SFGQIX2KMWIhMhzMipnS759SIqs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-salad-sandwiches-3053167-hero-01-5c829cbb46e0fb0001a0be24.jpg",
       name: "Chicken Salad Sandwich",
       description:
         "Creamy chicken salad with celery and mayo on whole-grain bread.",
     },
     {
       image:
-        "https://www.jessicagavin.com/wp-content/uploads/2020/07/blt-sandwich-7-1200.jpg",
+        "https://dyvn6jpt1f0d3.cloudfront.net/wp-content/uploads/2023/10/14154227/BLT-for-recipe-1-6-1200x675.jpeg",
       name: "BLT Sandwich",
       description: "Bacon, lettuce, tomato, and mayo on toasted bread.",
     },
     {
       image:
-        "https://www.southernliving.com/thmb/J4gqLn-6LbeK7Nj-3YftFBTROpY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/turkey-club-sandwich-ft-blog0718_0_1-2000-5ab93dfb8969478e8f2c0077d268b1e5.jpg",
+        "https://assets.bonappetit.com/photos/6358155c6db3ef49ffd91e97/3:2/w_2931,h_1954,c_limit/1025-turkey-club-seo-lede.jpg",
       name: "Turkey Club Sandwich",
       description:
         "Triple-decker sandwich with turkey, bacon, lettuce, and tomato.",
     },
     {
       image:
-        "https://assets.bonappetit.com/photos/5f9026e5936d2c297208166b/1:1/w_2560%2Cc_limit/mushroom-melt-sandwich.jpg",
+        "https://sundaysuppermovement.com/wp-content/uploads/2022/11/mushroom-grilled-cheese-featured.jpg",
       name: "Mushroom Melt",
       description: "Sauteed mushrooms with melted Swiss on a toasted roll.",
     },
@@ -142,19 +142,19 @@ function App() {
     },
     {
       image:
-        "https://therecipecritic.com/wp-content/uploads/2020/09/frenchfries-1.jpg",
+        "https://kirbiecravings.com/wp-content/uploads/2019/09/easy-french-fries-1.jpg",
       name: "French Fries",
       description: "Golden, crispy fries lightly salted.",
     },
     {
       image:
-        "https://www.simplyrecipes.com/thmb/ZdCeXuIxGfiEbSrMJW5VSE57MrA=/1332x1332/smart/filters:no_upscale()/Simply-Recipes-Roasted-Vegetables-Lead-5-b50a50c165f14dbab65634978e9b3c66.jpg",
+        "https://www.recipetineats.com/tachyon/2021/07/Roasted-Vegetables_56.jpg",
       name: "Roasted Vegetables",
       description: "A medley of roasted seasonal vegetables.",
     },
     {
       image:
-        "https://cookieandkate.com/images/2018/06/best-tossed-green-salad-1.jpg",
+        "https://www.foodandwine.com/thmb/uAAAw2CcQbWcxzLBRPJYsTr571U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/HD-201109-r-mixed-greens-herb-salad-182f21683caa4b6da1cee7c52f38239a.jpg",
       name: "Tossed Green Salad",
       description: "Fresh greens with a light vinaigrette dressing.",
     },
