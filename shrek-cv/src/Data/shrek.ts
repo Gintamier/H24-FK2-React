@@ -22,5 +22,21 @@ const SHREK_DATA = {
       description:
         "Responsible for maintaining the swamp and keeping unwelcome guests away.",
     },
+    {
+      title: "Hero of Far Far Away",
+      location: "Far Far Away",
+      period: "2004 - Present",
+      description:
+        "Saved Princess Fiona, defeated Lord Farquad, and rescued the kingdom from multiple threats.",
+    },
   ],
+  education: {
+    degree: "Advanced Swampology",
+    institution: "Swamp University",
+    period: "1999 - 2001",
+  },
+  quote:
+    '"Ogres are like onions. Onions have layers, Ogres have layers." - Shrek',
 };
+
+export default SHREK_DATA;
