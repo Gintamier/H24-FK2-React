@@ -1,0 +1,49 @@
+{
+  "questions": [
+    {
+      "question": "TOKYO GHOUL: Who is the main protagonist of Tokyo Ghoul?",
+      "choices": ["Naruto", "John Cena", "Shrek", "Ken Kaneki"],
+      "correctAnswerIdx": 3
+    },
+    {
+      "question": "TOKYO GHOUL: How did Ken Kaneki turn into a ghoul?",
+      "choices": [
+        "He ate a bad apple",
+        "He got a stomach ache",
+        "He was always a ghoul",
+        "organ transplant from Rize"
+      ],
+      "correctAnswerIdx": 3
+    },
+    {
+      "question": "KONOSUBA: What is the name of the main 2 characters?",
+      "choices": [
+        "Kazuma Satou & Aqua",
+        "Jeremy & Loki",
+        "Ken Kaneki & Jordan",
+        "Kirito & Asuna"
+      ],
+      "correctAnswerIdx": 0
+    },
+    {
+      "question": "KONOSUBA: What did Kazuma Satou choose to take with him to be reincarnated?",
+      "choices": [
+        "A Godlike sword",
+        "Aqua the water goddess",
+        "The abilities of a great magician",
+        "A gun"
+      ],
+      "correctAnswerIdx": 1
+    },
+    {
+      "question": "KONOSUBA: What is the name of the first companion to join Kazuma and Aqua?",
+      "choices": ["Megumin", "Raphael", "Philip", "Becky"],
+      "correctAnswerIdx": 0
+    },
+    {
+      "question": "KONOSUBA: What is the name of the second companion to join Kazuma, Aqua and Megumin?",
+      "choices": ["Felicia", "Jeremy", "Moogie", "Darkness"],
+      "correctAnswerIdx": 3
+    }
+  ]
+}
