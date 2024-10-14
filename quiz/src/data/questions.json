@@ -1,49 +1,269 @@
 {
-  "questions": [
+  "quizzes": [
     {
-      "question": "TOKYO GHOUL: Who is the main protagonist of Tokyo Ghoul?",
-      "choices": ["Naruto", "John Cena", "Shrek", "Ken Kaneki"],
-      "correctAnswerIdx": 3
+      "title": "Tokyo Ghoul Quiz",
+      "questions": [
+        {
+          "question": "Who is the main protagonist of Tokyo Ghoul?",
+          "choices": ["Naruto", "John Cena", "Shrek", "Ken Kaneki"],
+          "correctAnswerIdx": 3
+        },
+        {
+          "question": "How did Ken Kaneki turn into a ghoul?",
+          "choices": [
+            "He ate a bad apple",
+            "He got a stomach ache",
+            "He was always a ghoul",
+            "Organ transplant from Rize"
+          ],
+          "correctAnswerIdx": 3
+        },
+        {
+          "question": "What is the name of the coffee shop where ghouls gather?",
+          "choices": ["Anteiku", "Starbucks", "Cafe Ghoul", "Cafe Kaneki"],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "Who is the leader of Aogiri Tree?",
+          "choices": ["Touka", "Shuu Tsukiyama", "Yoshimura", "Eto"],
+          "correctAnswerIdx": 3
+        },
+        {
+          "question": "Which of the following characters is known as 'Rabbit'?",
+          "choices": [
+            "Ken Kaneki",
+            "Touka Kirishima",
+            "Nishiki Nishio",
+            "Hinami Fueguchi"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "What is the primary food source for ghouls?",
+          "choices": ["Hamburgers", "Coffee", "Human flesh", "Vegetables"],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "Who is known as the 'Gourmet' ghoul?",
+          "choices": [
+            "Amon Koutarou",
+            "Rize Kamishiro",
+            "Shuu Tsukiyama",
+            "Ayato Kirishima"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "What organization hunts ghouls?",
+          "choices": ["CCG", "JSS", "NRA", "UAE"],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What is the ability of Kaneki's kakuja?",
+          "choices": [
+            "Healing factor",
+            "Enhanced strength",
+            "Invisibility",
+            "Teleportation"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "Which character is a half-ghoul and half-human?",
+          "choices": [
+            "Touka Kirishima",
+            "Ken Kaneki",
+            "Rize Kamishiro",
+            "Hideyoshi Nagachika"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "What is the primary focus of the CCG?",
+          "choices": [
+            "To promote peace between humans and ghouls",
+            "To eliminate ghouls",
+            "To study ghouls",
+            "To recruit ghouls into society"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "What does Kaneki's first ghoul mask look like?",
+          "choices": [
+            "White and fluffy",
+            "A black skull",
+            "A half-white, half-black mask",
+            "A clown mask"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "What was Rize Kamishiro's nickname?",
+          "choices": [
+            "The Black Reaper",
+            "The Human Killer",
+            "The Glutton",
+            "The Vengeful Spirit"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "Who is Kaneki's best friend?",
+          "choices": [
+            "Hideyoshi Nagachika",
+            "Touka Kirishima",
+            "Shuu Tsukiyama",
+            "Rize Kamishiro"
+          ],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What is the name of the ghoul that Kaneki has a strong bond with?",
+          "choices": ["Touka", "Rize", "Hinami", "Ayato"],
+          "correctAnswerIdx": 0
+        }
+      ]
     },
     {
-      "question": "TOKYO GHOUL: How did Ken Kaneki turn into a ghoul?",
-      "choices": [
-        "He ate a bad apple",
-        "He got a stomach ache",
-        "He was always a ghoul",
-        "organ transplant from Rize"
-      ],
-      "correctAnswerIdx": 3
-    },
-    {
-      "question": "KONOSUBA: What is the name of the main 2 characters?",
-      "choices": [
-        "Kazuma Satou & Aqua",
-        "Jeremy & Loki",
-        "Ken Kaneki & Jordan",
-        "Kirito & Asuna"
-      ],
-      "correctAnswerIdx": 0
-    },
-    {
-      "question": "KONOSUBA: What did Kazuma Satou choose to take with him to be reincarnated?",
-      "choices": [
-        "A Godlike sword",
-        "Aqua the water goddess",
-        "The abilities of a great magician",
-        "A gun"
-      ],
-      "correctAnswerIdx": 1
-    },
-    {
-      "question": "KONOSUBA: What is the name of the first companion to join Kazuma and Aqua?",
-      "choices": ["Megumin", "Raphael", "Philip", "Becky"],
-      "correctAnswerIdx": 0
-    },
-    {
-      "question": "KONOSUBA: What is the name of the second companion to join Kazuma, Aqua and Megumin?",
-      "choices": ["Felicia", "Jeremy", "Moogie", "Darkness"],
-      "correctAnswerIdx": 3
+      "title": "Konosuba Quiz",
+      "questions": [
+        {
+          "question": "What is the name of the main 2 characters?",
+          "choices": [
+            "Kazuma Satou & Aqua",
+            "Jeremy & Loki",
+            "Ken Kaneki & Jordan",
+            "Kirito & Asuna"
+          ],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What did Kazuma Satou choose to take with him to be reincarnated?",
+          "choices": [
+            "A Godlike sword",
+            "Aqua the water goddess",
+            "The abilities of a great magician",
+            "A gun"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "What is Megumin’s signature attack?",
+          "choices": ["Lightning Strike", "Blizzard", "Explosion", "Fireball"],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "Which of the following is Darkness' main quirk?",
+          "choices": [
+            "She’s terrified of fighting",
+            "She’s a masochist",
+            "She’s afraid of water",
+            "She’s a vegetarian"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "What is the title of Aqua's goddess role?",
+          "choices": [
+            "Goddess of Love",
+            "Goddess of Luck",
+            "Goddess of Water",
+            "Goddess of Fire"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "What kind of party does Kazuma lead?",
+          "choices": [
+            "A balanced party of all-around adventurers",
+            "A highly skilled warrior group",
+            "An incompetent but lovable party",
+            "A powerful and elite team of wizards"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "What is Wiz’s role in the series?",
+          "choices": [
+            "A wandering knight",
+            "An archwizard and shopkeeper",
+            "Kazuma's rival",
+            "Aqua's twin sister"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "Which of these phrases does Kazuma often say?",
+          "choices": [
+            "I'll save the day!",
+            "Kazuma desu!",
+            "I’m invincible!",
+            "Let’s blow things up!"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "Which skill does Kazuma excel at?",
+          "choices": ["Steal", "Swordsmanship", "Magic", "Cooking"],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What is Megumin obsessed with?",
+          "choices": [
+            "Fire magic",
+            "Becoming a knight",
+            "Explosions",
+            "Treasure hunting"
+          ],
+          "correctAnswerIdx": 2
+        },
+        {
+          "question": "What is Aqua most afraid of?",
+          "choices": [
+            "Chickens",
+            "Undead creatures",
+            "Water",
+            "Megumin's explosions"
+          ],
+          "correctAnswerIdx": 1
+        },
+        {
+          "question": "Who is the goddess of luck and fortune in Konosuba?",
+          "choices": ["Eris", "Aqua", "Luna", "Cecily"],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What is the name of Aqua's divine artifact?",
+          "choices": [
+            "Aqua's staff",
+            "Aqua's crystal",
+            "Aqua's sword",
+            "Aqua's pendant"
+          ],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What is the main weakness of Darkness?",
+          "choices": [
+            "She can’t fight",
+            "She is too timid",
+            "She is afraid of the dark",
+            "She is a masochist"
+          ],
+          "correctAnswerIdx": 3
+        },
+        {
+          "question": "What does Kazuma do in his previous life?",
+          "choices": ["A gamer", "A student", "An office worker", "A teacher"],
+          "correctAnswerIdx": 0
+        },
+        {
+          "question": "What type of magic does Aqua specialize in?",
+          "choices": ["Water magic", "Fire magic", "Earth magic", "Wind magic"],
+          "correctAnswerIdx": 0
+        }
+      ]
     }
   ]
 }
