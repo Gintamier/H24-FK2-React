@@ -22,8 +22,11 @@ myFunction([7,2,1,6,3],1) Expected 7
 // Return the result
 // Tip: use the array prototype function slice()
 const removeFirstThreeElements = (a) => {
-  return;
+  return a.slice(3);
 };
+
+console.log(removeFirstThreeElements([1, 2, 3, 4, 5]));
+console.log(removeFirstThreeElements([5, 4, 3, 2, 1, 0]));
 
 /*
 Test cases:
