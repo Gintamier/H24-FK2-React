@@ -1,21 +1,11 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Header from "@/components/Header";
+import Center from "@/components/Center";
 
 export default function Home() {
   return (
-    <div>
-      <p>Hello World!</p>
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center text-black">
+      <Header />
+      <Center />
     </div>
   );
 }
