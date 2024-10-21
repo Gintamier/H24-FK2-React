@@ -25,8 +25,8 @@ const removeFirstThreeElements = (a) => {
   return a.slice(3);
 };
 
-console.log(removeFirstThreeElements([1, 2, 3, 4, 5]));
-console.log(removeFirstThreeElements([5, 4, 3, 2, 1, 0]));
+// console.log(removeFirstThreeElements([1, 2, 3, 4, 5]));
+// console.log(removeFirstThreeElements([5, 4, 3, 2, 1, 0]));
 
 /*
 Test cases:
@@ -41,8 +41,11 @@ myFunction([99,1,1]) Expected []
 // It should return the last n elements of a
 // Tip: use the array prototype function slice()
 const removeLastNElements = (a, n) => {
-  return;
+  return a.slice(-n);
 };
+
+// console.log(removeLastNElements([1, 2, 3, 4, 5], 2));
+// console.log(removeLastNElements([1, 2, 3], 6));
 
 /*
 Test cases:
@@ -56,8 +59,12 @@ myFunction([1, 2, 3, 4, 5, 6, 7, 8], 3) Expected [ 6, 7, 8 ]
 // Return the number of elements in a
 // Tip: How do you find the length of an array?
 const countNumberOfElements = (a) => {
-  return;
+  return a.length;
 };
+
+// console.log(countNumberOfElements([1, 2, 2, 4]));
+// console.log(countNumberOfElements([9, 9, 9]));
+
 /*
 Test cases: 
 myFunction([1,2,2,4]) Expected 4
@@ -73,8 +80,11 @@ myFunction([4,3,2,1,0]) Expected 5
 // - Use .filter() to filter only negative numbers, and count them
 // - Use .forEach() to iterate through all numbers and count negatives
 const countNumberOfNegativeValues = (a) => {
-  return;
+  return a.filter((x) => x < 0).length;
 };
+
+// console.log(countNumberOfNegativeValues([1, -2, 2, -4]));
+// console.log(countNumberOfNegativeValues([0, 9, 1]));
 
 /*
 Test cases:
@@ -89,8 +99,12 @@ myFunction([4,-3,2,1,0]) Expected 1
 // It should return the sum of the numbers
 // Tip: forEach, c-style loop (or even .reduce() for the brave)
 const calcSumOfArrayOfNumbers = (a) => {
-  return;
+  return a.reduce((acc, curr) => acc + curr, 0);
 };
+
+// console.log(calcSumOfArrayOfNumbers([10, 100, 40]));
+// console.log(calcSumOfArrayOfNumbers([10, 100, 1000, 1]));
+// console.log(calcSumOfArrayOfNumbers([-50, 0, 50, 200]));
 
 /*
 Test cases:
@@ -105,8 +119,10 @@ myFunction([-50,0,50,200]) Expected 200
 // Tip: forEach, c-style loop (or even .reduce() for the brave)
 // to get the sum, then divide by number of elements in array
 const calcAvgOfArrayOfNumbers = (arr) => {
-  return;
+  return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
 };
+
+// console.log(calcAvgOfArrayOfNumbers([10, 100, 40]));
 
 /*
 Test cases:
@@ -121,8 +137,11 @@ myFunction([-50,0,50,200]) Expected 50
 // Tip: It's possible to get length of string with .length
 // E.g. 'Gunnsteinn'.length = 10
 const getLongestStringFromArray = (arr) => {
-  return;
+  return arr.reduce((acc, curr) => (acc.length > curr.length ? acc : curr), "");
 };
+
+// console.log(getLongestStringFromArray(["help", "me"]));
+// console.log(getLongestStringFromArray(["I", "need", "candy"]));
 
 /*
 Test cases:
@@ -136,8 +155,13 @@ myFunction(['I', 'need', 'candy']) Expected 'candy'
 // It should return false otherwise
 // Tip: STRICTLY equal, ====
 const areAllEqual = (arr) => {
-  return;
+  return arr.every((x) => x === arr[0]);
 };
+
+// console.log(areAllEqual([true, true, true, true]));
+// console.log(areAllEqual(["test", "test", "test"]));
+// console.log(areAllEqual([1, 1, 1, 2]));
+// console.log(areAllEqual(["10", 10, 10, 10]));
 
 /*
 Test cases:
@@ -146,13 +170,18 @@ myFunction(['test', 'test', 'test']) Expected true
 myFunction([1,1,1,2]) Expected false 
 myFunction(['10',10,10,10]) Expected false 
 */
+
 // ========================================
 // Write a function that takes arguments an arbitrary number of arrays
 // It should return an array containing the values of all arrays
 // Tip: Make use of the spread syntax (...), as the parameters suggest
 const mergeAllArrays = (...arrays) => {
-  return;
+  return arrays.flat();
 };
+
+console.log(mergeAllArrays([1, 2, 3], [4, 5, 6]));
+console.log(mergeAllArrays(["a", "b", "c"], [4, 5, 6]));
+console.log(mergeAllArrays([true, true], [1, 2], ["a", "b"]));
 
 /*
 Test cases:
