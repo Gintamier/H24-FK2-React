@@ -1,5 +1,10 @@
 "use client";
-import React, { useRef, forwardRef, useImperativeHandle } from "react";
+import React, {
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+  useState,
+} from "react";
 
 // Pre-defined colors to be used for randomizer
 const tailwindColors = [
@@ -14,38 +19,61 @@ const tailwindColors = [
   "bg-orange-500",
 ];
 
+const sizes = [20, 24, 28, 32];
+let currentIndex = 0;
+
 // TODO: According to this type, add these functions to this component to be used within the parent component.
 // Hint: useImperativeHandle
 type MagicBoxHandle = {
   changeColor: () => void;
-  resize: () => void;
-  wiggle: () => void;
+  resize?: () => void;
+  wiggle?: () => void;
 };
 
 type MagicBoxRef = MagicBoxHandle & HTMLDivElement;
 
 // eslint-disable-next-line react/display-name
 const MagicBox = forwardRef<MagicBoxHandle>((_, ref) => {
+  function nextSize() {
+    setSize(sizes[currentIndex]);
+    currentIndex = (currentIndex + 1) % sizes.length;
+  }
+
+  useImperativeHandle(
+    ref,
+    () => {
+      return {
+        changeColor: randomColor,
+        wiggle,
+        resize: nextSize,
+      };
+    },
+    []
+  );
+
+  const [currentColor, setCurrentColor] = useState(tailwindColors[0]);
+
   const boxRef = useRef<MagicBoxRef>(null);
   // TODO: Can use either state or ref to maintain this value
-  const size = "20";
+  const [size, setSize] = useState(20);
 
   // Random color generator
   function randomColor() {
-    // TODO: Get a random color from tailwindColors
+    const randomIndex = Math.floor(Math.random() * tailwindColors.length);
+    setCurrentColor(tailwindColors[randomIndex]);
   }
 
   const wiggle = () => {
     // TODO: Add and then remove an animation from the classlist of a component
-    boxRef.current?.classList.add("");
-    setTimeout(() => boxRef.current?.classList.remove(""), 2000);
+    boxRef.current?.classList.add("animate-wiggle");
+    setTimeout(() => boxRef.current?.classList.remove("animate-wiggle"), 2000);
   };
 
   return (
     <div
       ref={boxRef}
       className={
-        /*TODO: Update the styles to work for more variables*/ `w-20 h-${size} bg-red-500`
+        /*TODO: Update the styles to work for more variables*/ `w-${size} h-${size} ${currentColor}`
       }
     />
   );
@@ -66,13 +94,13 @@ function MagicBoxParent() {
       </button>
       <button
         className="m-4 border"
-        onClick={() => magicBoxRef.current?.resize()}
+        onClick={() => magicBoxRef.current?.resize?.()}
       >
         Resize
       </button>
       <button
         className="m-4 border"
-        onClick={() => magicBoxRef.current?.wiggle()}
+        onClick={() => magicBoxRef.current?.wiggle?.()}
       >
         Wiggle
       </button>
