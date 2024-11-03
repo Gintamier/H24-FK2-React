@@ -18,7 +18,7 @@ const tailwindColors = [
   "bg-teal-500",
   "bg-orange-500",
 ];
-
+// Issue with running the sizes, If you don't manually run the sizes first then it won't work... why??? - Oli
 const sizes = [20, 24, 28, 32];
 let currentIndex = 0;
 
@@ -73,7 +73,7 @@ const MagicBox = forwardRef<MagicBoxHandle>((_, ref) => {
     <div
       ref={boxRef}
       className={
-        /*TODO: Update the styles to work for more variables*/ `w-${size} h-${size} ${currentColor}`
+        /*TODO: Update the styles to work for more variables*/ `w-${size} h-20 ${currentColor}`
       }
     />
   );
