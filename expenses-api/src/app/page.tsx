@@ -4,9 +4,11 @@ import { Expense, ExpenseWithoutId } from "@/types";
 import { createExpense, deleteExpense, getExpenses } from "@/app/services/api";
 import ExpenseList from "@/components/ExpenseList";
 import AddExpenseForm from "@/components/AddExpenseForm";
+import DarkModeToggle from "@/components/Darkmode";
 
 export default function Home() {
   const [expenses, setExpenses] = useState<Array<Expense>>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchExpenses = async () => {
@@ -39,12 +41,36 @@ export default function Home() {
     }
   };
 
+  const handleLogin = (username: string) => {
+    console.log(`User logged in: ${username}`);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    console.log("User logged out");
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div className=" min-h-screen flex flex-col items-center bg-gray-500">
-      <h1 className="text-3xl font-bold text-blue-500 mb-8">Expense Tracker</h1>
-      <div className="w-full max-w-lg ">
-        <AddExpenseForm onAddExpense={handleAddExpense} />
-        <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
+    <div className="min-h-screen flex flex-col items-center bg-background text-foreground transition-all duration-300 ease-in-out relative">
+      <h1 className="text-3xl font-bold text-blue-500 mb-8 transition-colors duration-300 ease-in-out">
+        Expense Tracker
+      </h1>
+      <div className="w-full max-w-lg">
+        <AddExpenseForm
+          onAddExpense={handleAddExpense}
+          isLoggedIn={isLoggedIn}
+          onLogin={handleLogin}
+          onLogout={handleLogout}
+        />
+        <ExpenseList
+          expenses={expenses}
+          onDelete={handleDeleteExpense}
+          isLoggedIn={isLoggedIn}
+        />
+      </div>
+      <div className="absolute top-4 right-4 flex space-x-4">
+        <DarkModeToggle />
       </div>
     </div>
   );
