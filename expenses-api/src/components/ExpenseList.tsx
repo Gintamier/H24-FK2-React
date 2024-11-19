@@ -4,7 +4,7 @@ import React from "react";
 type Props = {
   expenses: Expense[];
   onDelete: (id: Expense["id"]) => void;
-  isLoggedIn: boolean; // Track login state to conditionally render the delete button
+  isLoggedIn: boolean;
 };
 
 const ExpenseList = ({ expenses, onDelete, isLoggedIn }: Props) => {
@@ -27,7 +27,6 @@ const ExpenseList = ({ expenses, onDelete, isLoggedIn }: Props) => {
                 ${expense.cost.toFixed(2)}
               </span>
             </div>
-            {/* Conditionally render the delete button based on isLoggedIn */}
             {isLoggedIn && (
               <button
                 onClick={() => onDelete(expense.id)}
