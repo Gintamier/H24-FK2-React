@@ -27,11 +27,11 @@ const characters: Record<string, Character> = {
 };
 
 export default function Characters() {
-  // const { incrementCounter, counter } = useCounter();
+  const { incrementCounter, counter } = useCounter();
   return (
     <div className="flex flex-col">
-      {/* <p onClick={incrementCounter}>Increment counter here!</p> */}
-      {/* <p>Current count: {counter}</p> */}
+      <p onClick={incrementCounter}>Increment counter here!</p>
+      <p>Current count: {counter}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {Object.entries(characters).map(([slug, character]) => (
           <Link
