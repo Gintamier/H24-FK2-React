@@ -55,7 +55,6 @@ const TaskManagerApp: React.FC = () => {
     );
   }, []);
 
-  // Filter tasks based on the search query
   const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(search.toLowerCase())
   );
