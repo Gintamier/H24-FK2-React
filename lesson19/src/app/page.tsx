@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback, memo } from "react";
 
 interface Task {
   id: number;
@@ -8,11 +8,10 @@ interface Task {
   completed: boolean;
 }
 
-// Task component (inefficient)
-const TaskItem: React.FC<{ task: Task; onToggle: (id: number) => void }> = ({
-  task,
-  onToggle,
-}) => {
+const TaskItem: React.FC<{
+  task: Task;
+  onToggle: (id: number) => void;
+}> = memo(({ task, onToggle }) => {
   console.log(`Rendering Task: ${task.title}`);
   return (
     <li>
@@ -26,7 +25,7 @@ const TaskItem: React.FC<{ task: Task; onToggle: (id: number) => void }> = ({
       </label>
     </li>
   );
-};
+});
 
 const TaskManagerApp: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>(
@@ -40,22 +39,23 @@ const TaskManagerApp: React.FC = () => {
   const [newTask, setNewTask] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
-  const handleAddTask = () => {
-    setTasks([
-      ...tasks,
-      { id: tasks.length, title: newTask, completed: false },
+  const handleAddTask = useCallback(() => {
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      { id: prevTasks.length, title: newTask, completed: false },
     ]);
     setNewTask("");
-  };
+  }, [newTask]);
 
-  const handleToggleTask = (id: number) => {
-    setTasks(
-      tasks.map((task) =>
+  const handleToggleTask = useCallback((id: number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
-  };
+  }, []);
 
+  // Filter tasks based on the search query
   const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(search.toLowerCase())
   );
