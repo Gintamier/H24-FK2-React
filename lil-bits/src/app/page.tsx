@@ -10,7 +10,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-    // Function to handle email check and fetch data
+  // Function to handle email check and fetch data from (orders-api)
   const handleEmailCheck = async () => {
     setLoading(true);
     setError(null);
@@ -31,7 +31,6 @@ export default function HomePage() {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="container mx-auto p-6 space-y-10">
@@ -118,7 +117,7 @@ export default function HomePage() {
         </div>
       </div>
 
-     {/* Display User Information  */}
+      {/* Display User Information  */}
       {userInfo && (
         <div className="bg-green-50 p-8 rounded-lg shadow-xl mt-10">
           <h2 className="text-4xl font-semibold text-center text-gray-800">
