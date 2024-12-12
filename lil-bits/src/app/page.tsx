@@ -38,10 +38,10 @@ export default function HomePage() {
         Welcome to Lil Bits
       </h1>
 
-      {/* Flex Container for Carousel and Order Flow Box */}
-      <div className="flex space-x-10 mb-10">
+      {/* Top Row: Carousel and Order Flow Box */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
         {/* Carousel Section */}
-        <div className="flex-1">
+        <div className="lg:col-span-2">
           <Carousel showThumbs={false} autoPlay infiniteLoop>
             <div>
               <img
@@ -68,78 +68,53 @@ export default function HomePage() {
         </div>
 
         {/* Order Flow Box */}
-        <div className="w-1/3 bg-white p-8 rounded-lg shadow-xl space-y-6">
-          <h3 className="text-2xl font-semibold text-gray-800">
+        <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-between h-72">
+          <h3 className="text-xl font-bold text-center text-red-600">
             Order Flow Box
           </h3>
-          <p className="text-gray-700 text-sm">
-            This section will show the flow of the order process.
+          <p className="text-sm text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            praesentium doloremque, laboriosam fugiat sequi odit exercitationem
+            beatae harum eius, cumque pariatur adipisci, modi temporibus atque
+            alias cupiditate consectetur quaerat illum!
           </p>
           <button
             onClick={() => {
-              window.location.href = "/order";
+              window.location.href = "/order-meal";
             }}
-            className="bg-green-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-700 transition-colors w-full"
+            className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition-colors w-full"
           >
-            Start Order
+            Order
           </button>
         </div>
       </div>
 
-      {/* Main Content Section */}
-      <div className="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0 lg:space-x-10">
-        <div className="flex-1 bg-white p-8 rounded-lg shadow-xl space-y-6">
-          <h2 className="text-3xl font-semibold text-center text-gray-800">
-            Find Your Order
-          </h2>
+      {/* Bottom Row: Find Your Order and Content Box */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Find Your Order */}
+        <div className="bg-white p-6 rounded-lg shadow-lg space-y-4">
+          <h3 className="text-lg font-bold text-red-600">Find Your Order</h3>
           <input
             type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="p-4 border border-gray-300 rounded-xl w-full focus:ring-2 focus:ring-green-500 shadow-md"
+            placeholder="Enter Email"
+            className="p-2 border border-gray-300 rounded-lg w-full"
           />
-          <button
-            onClick={handleEmailCheck}
-            className="bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-green-700 transition-all duration-200 w-full"
-          >
-            {loading ? "Checking..." : "Check Order"}
+          <button className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition-colors w-full">
+            Find
           </button>
-
-          {error && <p className="text-red-600 text-center mt-4">{error}</p>}
         </div>
 
-        <div className="lg:w-1/3 space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-xl border border-gray-200">
-            <h3 className="text-xl font-semibold mb-4">Content Box</h3>
-            <p className="text-gray-700 text-sm">
-              This section will display additional relevant content.
-            </p>
-          </div>
+        {/* Content Box */}
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-bold text-red-600">Content Box</h3>
+          <p className="text-sm text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            repellendus nulla optio voluptatem dolorum, itaque error neque,
+            recusandae voluptatibus hic rem, praesentium odit rerum. Modi
+            tempora repellendus repellat magni fuga.
+          </p>
         </div>
       </div>
-
-      {/* Display User Information */}
-      {userInfo && (
-        <div className="bg-green-50 p-8 rounded-lg shadow-xl mt-10">
-          <h2 className="text-4xl font-semibold text-center text-gray-800">
-            Welcome Back!
-          </h2>
-          <p className="mt-4 text-lg text-gray-700 text-center">
-            Your previous order: <strong>{userInfo.dish.name}</strong>
-          </p>
-          <p className="mt-2 text-gray-600 text-center">
-            {userInfo.dish.description}
-          </p>
-          <div className="mt-6 text-center">
-            <img
-              src={userInfo.dish.imageSource}
-              alt={userInfo.dish.name}
-              className="mx-auto w-72 h-auto rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
