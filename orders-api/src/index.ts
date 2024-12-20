@@ -18,18 +18,19 @@ let orders: Order[] = [
           "https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg",
         name: "Gylltur",
         price: 2500,
+        qty: 2, // Initial qty for drinks
       },
     ],
-
     email: "gunnsteinnskula@gmail.com",
     count: 10,
     date: new Date(),
+    time: "14:30", // Initial order time
     dish: {
       id: "53051",
       category: "seafood",
       cousine: "Malaysian",
       description:
-        "In a medium saucepan over medium heat, stir together coconut milk, water, ground ginger, ginger root, salt, bay leaf, and rice. Cover, and bring to a boil. Reduce heat, and simmer for 20 to 30 minutes, or until done.\r\n\r\n Step 2\r\nPlace eggs in a saucepan, and cover with cold water. Bring water to a boil, and immediately remove from heat. Cover, and let eggs stand in hot water for 10 to 12 minutes. Remove eggs from hot water, cool, peel and slice in half. Slice cucumber.\r\n\r\n Step 3\r\nMeanwhile, in a large skillet or wok, heat 1 cup vegetable oil over medium-high heat. Stir in peanuts and cook briefly, until lightly browned. Remove peanuts with a slotted spoon and place on paper towels to soak up excess grease. Return skillet to stove. Stir in the contents of one package anchovies; cook briefly, turning, until crisp. Remove with a slotted spoon and place on paper towels. Discard oil. Wipe out skillet.\r\n\r\n Step 4\r\nHeat 2 tablespoons oil in the skillet. Stir in the onion, garlic, and shallots; cook until fragrant, about 1 or 2 minutes. Mix in the chile paste, and cook for 10 minutes, stirring occasionally. If the chile paste is too dry, add a small amount of water. Stir in remaining anchovies; cook for 5 minutes. Stir in salt, sugar, and tamarind juice; simmer until sauce is thick, about 5 minutes.\r\n\r\n Step 5\r\nServe the onion and garlic sauce over the warm rice, and top with peanuts, fried anchovies, cucumbers, and eggs.",
+        "In a medium saucepan over medium heat, stir together coconut milk, water, ground ginger, ginger root, salt, bay leaf, and rice. Cover, and bring to a boil. Reduce heat, and simmer for 20 to 30 minutes, or until done.",
       imageSource:
         "https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg",
       name: "Nasi lemak",
@@ -51,18 +52,58 @@ api.get("/api/orders", (_, res) => {
   return res.json(orders);
 });
 
-// Validation function for order - note that the object validation might not be entirely accurate and might need some modification
+// Validation function for order
 const isOrder = (body: Order | Record<string, unknown>): body is Order => {
-  if (
-    "name" in body &&
-    typeof body.name === "string" &&
+  console.log("Received body:", body); // Log the entire body for debugging
+
+  // Check if 'body.dish' is a valid object and has a 'name' property
+  const isDishValid =
+    body.dish &&
+    typeof body.dish === "object" &&
+    "name" in body.dish &&
+    typeof (body.dish as { name: string }).name === "string";
+
+  // Check if 'body.date' is a string and a valid date
+  const isDateValid =
+    typeof body.date === "string" &&
+    !isNaN(new Date(body.date as string).getTime());
+
+  // Ensure that body contains all required properties and that they are valid
+  const validOrder =
     "email" in body &&
     typeof body.email === "string" &&
-    "dish" in body &&
-    typeof body.dish === "object"
-  ) {
+    isDishValid && // Check that dish is valid
+    "drinks" in body &&
+    Array.isArray(body.drinks) &&
+    body.drinks.length > 0 &&
+    "count" in body &&
+    typeof body.count === "number" &&
+    body.count > 0 &&
+    isDateValid && // Check for valid date string
+    "time" in body && // Check for time
+    typeof body.time === "string" &&
+    body.time.length > 0;
+
+  // Log the missing or invalid fields
+  if (!validOrder) {
+    console.error("Validation failed. Missing or invalid fields:", {
+      email: "email" in body ? body.email : "missing",
+      dish: "dish" in body ? body.dish : "missing",
+      dishName: isDishValid ? (body.dish as { name: string }).name : "missing",
+      drinks: "drinks" in body ? body.drinks : "missing",
+      count: "count" in body ? body.count : "missing",
+      date: isDateValid ? body.date : "missing or invalid",
+      time: "time" in body ? body.time : "missing",
+    });
+  }
+
+  if (validOrder) {
+    if (typeof body.date === "string") {
+      body.date = new Date(body.date as string); // Explicitly cast to string
+    }
     return true;
   }
+
   return false;
 };
 
@@ -72,7 +113,6 @@ api.post("/api/create-order", (req: Request<Order>, res) => {
     if (!req.body.email) {
       return false;
     }
-    // Returns true if email exists, and the index is 0 or higher. Returns false if it cannot find the item, resulting in -1
     return orders.findIndex((order) => order.email === req.body.email) >= 0;
   };
 
@@ -112,7 +152,6 @@ api.put("/api/update-order", (req: Request<Order>, res) => {
     if (!req.body.email) {
       return false;
     }
-    // Returns true if email does not exist, and the index is lower than 0, resulting in -1
     return orders.findIndex((order) => order.email === req.body.email) < 0;
   };
 
@@ -132,8 +171,7 @@ api.put("/api/update-order", (req: Request<Order>, res) => {
     return;
   }
 
-  // Map over each item, if the item has the same email as the email in the body, update the order with the new order changes
-  orders.map((o) => {
+  orders = orders.map((o) => {
     if (o.email === req.body.email) {
       return req.body;
     }
@@ -150,7 +188,10 @@ api.put("/api/update-order", (req: Request<Order>, res) => {
 api.get("/api/order/:email", (req, res) => {
   const order = orders.find((order) => order.email === req.params.email);
   if (order) {
-    return res.json(order);
+    return res.json({
+      success: true,
+      order,
+    });
   }
 
   res.json({
@@ -190,7 +231,7 @@ api.delete("/api/order/:email", (req, res) => {
   } else {
     res.json({
       success: false,
-      error: `Could not find order with id=${paramEmail}`,
+      error: `Could not find order with email=${paramEmail}`,
     });
   }
 });

@@ -19,15 +19,16 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="bg-white text-black min-h-screen flex flex-col font-sans">
         {/* Header */}
-        <header className="bg-white border-b-2 border-gray-300">
-          <nav className="container mx-auto flex justify-between items-center px-8 py-4">
+        <header className="bg-white border-b-2 border-gray-300 h-24">
+          <nav className="container mx-auto flex justify-between items-center px-8 h-full">
             {/* Logo */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center h-full">
               <Image
-                src="http://ih1.redbubble.net/image.181146356.8650/sticker,375x360.u1.png"
+                src="/assets/lilbitslogo.png"
                 alt="Logo"
                 width={150}
                 height={100}
+                className="object-contain h-full"
               />
             </div>
 
@@ -35,8 +36,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             <ul className="flex space-x-6 text-lg">
               {[
                 { name: "Home", href: "/" },
-                { name: "Order", href: "/order" },
-                { name: "Order Drinks", href: "/drinks" },
+                { name: "Order", href: "/order-meal" },
+                { name: "Order Drinks", href: "/order-drinks" },
                 { name: "Receipt", href: "/receipt" },
               ].map((link) => (
                 <li key={link.href}>
@@ -57,7 +58,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </header>
 
         {/* Main Content */}
-        <main className="container mx-auto flex flex-col lg:flex-row px-8 py-10 space-y-8 lg:space-y-0 lg:space-x-10">
+        <main className="flex-grow container mx-auto flex flex-col lg:flex-row px-8 py-10 space-y-8 lg:space-y-0 lg:space-x-10">
           {children}
         </main>
 
