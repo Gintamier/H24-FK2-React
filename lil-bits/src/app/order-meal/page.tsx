@@ -17,33 +17,33 @@ export default function OrderPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    // Function to fetch a new meal
-    const fetchMeal = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          "https://themealdb.com/api/json/v1/1/random.php"
-        );
-        const data = await response.json();
-        if (response.ok && data.meals && data.meals.length > 0) {
-          const fetchedMeal = data.meals[0];
-          const mealWithPrice = {
-            ...fetchedMeal,
-            price: +(Math.random() * (30 - 10) + 10).toFixed(2),
-          };
-          setMeal(mealWithPrice);
-          localStorage.setItem("meal", JSON.stringify(mealWithPrice)); // Update localStorage with the new meal
-        } else {
-          setError("Failed to fetch meal. Please try again later.");
-        }
-      } catch (err) {
-        setError("Something went wrong. Please try again later.");
-      } finally {
-        setLoading(false);
+  // Function to fetch a new meal
+  const fetchMeal = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        "https://themealdb.com/api/json/v1/1/random.php"
+      );
+      const data = await response.json();
+      if (response.ok && data.meals && data.meals.length > 0) {
+        const fetchedMeal = data.meals[0];
+        const mealWithPrice = {
+          ...fetchedMeal,
+          price: +(Math.random() * (30 - 10) + 10).toFixed(2),
+        };
+        setMeal(mealWithPrice);
+        localStorage.setItem("meal", JSON.stringify(mealWithPrice)); // Update localStorage with the new meal
+      } else {
+        setError("Failed to fetch meal. Please try again later.");
       }
-    };
+    } catch (err) {
+      setError("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchMeal(); // Always fetch a new meal on reload
   }, []); // Empty dependency array ensures it runs only once when the component is mounted
 
@@ -93,6 +93,14 @@ export default function OrderPage() {
             <p className="text-gray-700 text-justify">
               <strong>Instructions:</strong> {meal.strInstructions}
             </p>
+            <div className="flex justify-center">
+              <button
+                onClick={fetchMeal}
+                className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition-colors mt-4"
+              >
+                Request New Meal
+              </button>
+            </div>
           </div>
         )}
       </div>

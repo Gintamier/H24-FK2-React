@@ -22,7 +22,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         <header className="bg-white border-b-2 border-gray-300 h-24">
           <nav className="container mx-auto flex justify-between items-center px-8 h-full">
             {/* Logo */}
-            <div className="flex items-center h-full">
+            <div
+              className="flex items-center h-full cursor-pointer"
+              onClick={() => (window.location.href = "/")}
+            >
               <Image
                 src="/assets/lilbitslogo.png"
                 alt="Logo"

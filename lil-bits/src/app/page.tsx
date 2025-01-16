@@ -67,21 +67,21 @@ export default function HomePage() {
           <Carousel showThumbs={false} autoPlay infiniteLoop>
             <div>
               <img
-                src="https://via.placeholder.com/600x300?text=Image+1"
+                src="https://healthnewshub.org/wp-content/uploads/2024/03/Fast-Food-Restaurants.jpg"
                 alt="Slide 1"
                 className="w-full h-72 object-cover rounded-lg shadow-md"
               />
             </div>
             <div>
               <img
-                src="https://via.placeholder.com/600x300?text=Image+2"
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/2c/38/ec/these-fish-tacos-with.jpg"
                 alt="Slide 2"
                 className="w-full h-72 object-cover rounded-lg shadow-md"
               />
             </div>
             <div>
               <img
-                src="https://via.placeholder.com/600x300?text=Image+3"
+                src="https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591"
                 alt="Slide 3"
                 className="w-full h-72 object-cover rounded-lg shadow-md"
               />
